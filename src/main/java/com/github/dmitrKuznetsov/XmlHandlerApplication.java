@@ -16,9 +16,7 @@ public class XmlHandlerApplication {
             throw new RuntimeException("Use XML file name as the first program argument");
         }
 
-        String sortField = null;
-        if (args.length > 1)
-            sortField = args[1];
+        String sortField = args.length > 1 ? args[1] : "";
 
         ArrayList<Patient> patients = new XmlPatientReader().read("xml/" + fileName);
 
