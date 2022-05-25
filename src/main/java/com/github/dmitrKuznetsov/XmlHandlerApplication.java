@@ -20,7 +20,6 @@ public class XmlHandlerApplication {
         if (args.length > 1)
             sortField = args[1];
 
-
         ArrayList<Patient> patients = new XmlPatientReader().read("xml/" + fileName);
 
         new PatientSorterImpl(sortField).sort(patients);

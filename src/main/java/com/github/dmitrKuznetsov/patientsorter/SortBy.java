@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 class SortBy implements Comparator<Patient> {
 
-    private String sortField;
+    private final String sortField;
 
     SortBy(String sortField) {
         this.sortField = sortField;
@@ -14,10 +14,10 @@ class SortBy implements Comparator<Patient> {
 
     @Override
     public int compare(Patient p1, Patient p2) {
-        if (sortField == "name")
+        if (sortField.equals("name"))
             return p1.lastName.compareTo(p2.lastName);
-        else if (sortField == "age")
-            return p1.birthday.compareTo(p2.birthday);
+        else if (sortField.equals("age"))
+            return p2.birthday.compareTo(p1.birthday);
         return 0;
     }
 }

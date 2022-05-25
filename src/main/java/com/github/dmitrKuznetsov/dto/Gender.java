@@ -2,10 +2,10 @@ package com.github.dmitrKuznetsov.dto;
 
 public enum Gender {
     undefined("Н/О"),
-    male("Мужчина"),
-    female("Женщина");
+    male("М"),
+    female("Ж");
 
-    private String alias;
+    private final String alias;
 
     Gender(String alias) {
         this.alias = alias;

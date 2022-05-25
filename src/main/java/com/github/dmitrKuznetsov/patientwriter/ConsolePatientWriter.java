@@ -2,7 +2,6 @@ package com.github.dmitrKuznetsov.patientwriter;
 
 import com.github.dmitrKuznetsov.dto.Patient;
 import de.vandermeer.asciitable.AsciiTable;
-import de.vandermeer.skb.interfaces.transformers.textformat.TextAlignment;
 
 import java.util.ArrayList;
 
