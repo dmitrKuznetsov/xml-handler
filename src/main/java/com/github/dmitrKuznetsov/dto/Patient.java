@@ -1,8 +1,10 @@
 package com.github.dmitrKuznetsov.dto;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeParseException;
 
 public class Patient {
 
@@ -35,24 +37,35 @@ public class Patient {
         return Period.between(birthday, LocalDate.now()).getYears();
     }
 
+
+    @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
 
-        if (o == this) {
-            return true;
-        }
+        if (o == null || getClass() != o.getClass()) return false;
 
-        if (!(o instanceof Patient)) {
-            return false;
-        }
-
-        // typecast o to Complex so that we can compare data members
         Patient patient = (Patient) o;
 
-        // Compare the data members and return accordingly
-        return name().equals(patient.name())
-                && birthday.equals(patient.birthday)
-                && gender == patient.gender
-                && phone.equals(patient.phone);
+        return new EqualsBuilder()
+                .append(firstName, patient.firstName)
+                .append(middleName, patient.middleName)
+                .append(lastName, patient.lastName)
+                .append(birthday, patient.birthday)
+                .append(gender, patient.gender)
+                .append(phone, patient.phone)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(firstName)
+                .append(middleName)
+                .append(lastName)
+                .append(birthday)
+                .append(gender)
+                .append(phone)
+                .toHashCode();
     }
 }
 
