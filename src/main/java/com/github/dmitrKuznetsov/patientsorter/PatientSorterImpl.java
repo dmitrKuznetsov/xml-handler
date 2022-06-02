@@ -2,7 +2,6 @@ package com.github.dmitrKuznetsov.patientsorter;
 
 import com.github.dmitrKuznetsov.dto.Patient;
 
-import java.util.Collections;
 import java.util.List;
 
 public class PatientSorterImpl implements PatientSorter {
