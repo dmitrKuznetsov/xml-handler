@@ -3,7 +3,7 @@ package com.github.dmitrKuznetsov.patientreader;
 import com.github.dmitrKuznetsov.dto.Patient;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +17,7 @@ class XmlPatientReaderTest {
         Patient patient5 = new Patient("Михаил","Викторович","Медведев",
                 "1995-02-15","male","+7-920-670-9643");
         // when
-        ArrayList<Patient> patients = new XmlPatientReader().read("xml/sample.xml");
+        List<Patient> patients = new XmlPatientReader().read("xml/sample.xml");
 
         // then
         assertEquals(patient1, patients.get(0));

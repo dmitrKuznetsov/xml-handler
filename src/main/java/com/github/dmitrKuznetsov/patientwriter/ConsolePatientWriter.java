@@ -3,11 +3,11 @@ package com.github.dmitrKuznetsov.patientwriter;
 import com.github.dmitrKuznetsov.dto.Patient;
 import de.vandermeer.asciitable.AsciiTable;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class ConsolePatientWriter implements PatientWriter {
     @Override
-    public void write(ArrayList<Patient> patients) {
+    public void write(List<Patient> patients) {
         if (patients.isEmpty()) {
             System.out.printf("No patients found %n");
             return;

@@ -2,9 +2,9 @@ package com.github.dmitrKuznetsov.patientwriter;
 
 import com.github.dmitrKuznetsov.dto.Patient;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface PatientWriter {
 
-    void write(ArrayList<Patient> patients);
+    void write(List<Patient> patients);
 }

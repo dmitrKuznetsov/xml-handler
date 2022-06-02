@@ -5,7 +5,7 @@ import com.github.dmitrKuznetsov.patientreader.XmlPatientReader;
 import com.github.dmitrKuznetsov.patientsorter.PatientSorterImpl;
 import com.github.dmitrKuznetsov.patientwriter.ConsolePatientWriter;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class XmlHandlerApplication {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class XmlHandlerApplication {
         String fileName = args[0];
         String sortField = args.length > 1 ? args[1] : "";
 
-        ArrayList<Patient> patients = new XmlPatientReader().read("xml/" + fileName);
+        List<Patient> patients = new XmlPatientReader().read("xml/" + fileName);
 
         new PatientSorterImpl(sortField).sort(patients);
 

@@ -2,8 +2,9 @@ package com.github.dmitrKuznetsov.patientreader;
 
 import com.github.dmitrKuznetsov.dto.Patient;
 
-import java.util.ArrayList;
+import java.util.List;
+
 
 public interface PatientReader {
-    ArrayList<Patient> read(String fileName);
+    List<Patient> read(String fileName);
 }

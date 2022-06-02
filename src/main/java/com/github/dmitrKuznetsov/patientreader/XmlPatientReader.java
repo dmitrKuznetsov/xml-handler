@@ -16,20 +16,21 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 public class XmlPatientReader implements PatientReader {
 
     @Override
-    public ArrayList<Patient> read(String fileName) {
+    public List<Patient> read(String fileName) {
         File xmlFile = getFileFromResource(fileName);
 
-        ArrayList<Patient> patients = new ArrayList<>();
+        List<Patient> patients = new ArrayList<>();
         fillListFromXmlFile(patients, xmlFile);
 
         return patients;
     }
 
-    private void fillListFromXmlFile(ArrayList<Patient> patients, File xmlFile) {
+    private void fillListFromXmlFile(List<Patient> patients, File xmlFile) {
 
         // Instantiate the Factory
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();

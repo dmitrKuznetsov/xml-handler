@@ -4,11 +4,11 @@ import com.github.dmitrKuznetsov.dto.Patient;
 
 import java.util.Comparator;
 
-class SortBy implements Comparator<Patient> {
+class PatientComparator implements Comparator<Patient> {
 
     private final String sortField;
 
-    SortBy(String sortField) {
+    PatientComparator(String sortField) {
         this.sortField = sortField;
     }
 

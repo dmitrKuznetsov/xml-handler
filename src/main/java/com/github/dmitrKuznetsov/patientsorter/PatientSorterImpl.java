@@ -2,19 +2,19 @@ package com.github.dmitrKuznetsov.patientsorter;
 
 import com.github.dmitrKuznetsov.dto.Patient;
 
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class PatientSorterImpl implements PatientSorter {
 
-    private String field;
+    private final String field;
 
     public PatientSorterImpl(String field) {
         this.field = field;
     }
 
     @Override
-    public void sort(ArrayList<Patient> patients) {
-        Collections.sort(patients, new SortBy(field));
+    public void sort(List<Patient> patients) {
+        patients.sort(new PatientComparator(field));
     }
 }
